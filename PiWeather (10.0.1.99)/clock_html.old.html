@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+	background-color: black;}
+sup {
+	font-size: 90px;}
+time {
+	text-align: center;
+        font-family: Roadway;
+        font-size: 350px;
+        color: #78c0f0;} !f2f2f2 cc5500
+date {
+	text-align: center;
+        font-family: Cabin;
+        font-size: 60px;
+        color: #696969;}
+.center {
+	margin: auto;
+	width: 99%;
+	potition: absolute;
+	top: 50%;
+	left: 50%;;
+	transform: translate(0%, 1%);
+</style>
+
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  m = checkTime(m);
+  var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  var d = days[today.getDay()];
+  var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var mon = months[today.getMonth()];
+  var date = today.getDate();
+if (h > 12) {
+  h = h - 12;
+  var pm = 1;
+  document.getElementById('time').innerHTML =
+  h + ':' + m;}
+
+  else if (h < 12) {document.getElementById('time').innerHTML =
+  h + ':' + m;
+  var pm = 0;}
+
+  else if (h == 12 && pm == 1) {document.getElementById('time').innerHTML =
+  h + ':' + m;}
+
+  else {
+  h = 12;
+  document.getElementById('time').innerHTML =
+  h + ':' + m;}
+
+  var t = setTimeout(startTime, 500);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+<div class="center">
+	<time><div id="time"></div></time>
+	<date><div id="date"></div></date>
+</div>
+</body>
+</html>

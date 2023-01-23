@@ -1,0 +1,11 @@
+from terminal:
+
+export DISPLAY=:0.0
+
+now xdotools will work
+
+to refresh screen:
+xdotool key F5
+
+switch tabs:
+xdotool key ctrl+Tab

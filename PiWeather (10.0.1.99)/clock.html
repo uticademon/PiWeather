@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+ <html>
+     <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+      body {
+        background-color: black;
+      }
+      clock {
+           font-family: "Roadway";
+           color: #f2f2f2;
+           font-size: 35vw;
+           text-align: center;
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           margin-right: -50%;
+           transform: translate(-50%, -50%);
+       }
+     </style>
+
+       <script>
+       function startTime() {
+         var today = new Date();
+         var h = today.getHours();
+         var m = today.getMinutes();
+         m = checkTime(m);
+         var bg = today.getMonth();
+
+//        bg = 1; // !!! TEST - comment out when not testing!!!
+
+         document.body.style.backgroundRepeat = "no-repeat";
+         document.body.style.backgroundSize = "cover";
+
+          if (bg == 9) {
+     	      document.body.style.backgroundImage = "url('background/"+bg+".jpg')";
+            document.getElementById('clock').style.fontFamily = "Shlop"; // October
+            document.getElementById('clock').style.color = "rgb(254,0,0)"; // (0,179,0) = green
+            }
+          
+          else {
+              document.getElementById('clock').style.fontFamily = "Roadway";
+              document.body.style.backgroundImage = "url('background/"+bg+".jpg')";
+              document.getElementById('clock').style.color = "rgb(220,220,220)"; // (0,179,0) = green
+            }
+
+         if (h == 0) {
+           h = 12;
+           var pm = 0;
+           document.getElementById('clock').innerHTML = h + ':' + m;}
+
+           else if (h < 12) {
+           var pm = 0;
+           document.getElementById('clock').innerHTML = h + ':' + m;}
+
+           else if (h == 12) {
+           var pm = 1;
+           document.getElementById('clock').innerHTML = h + ':' + m;}
+
+           else {
+           h = h - 12;
+           var pm = 1;
+           document.getElementById('clock').innerHTML = h + ':' + m;}
+
+         var t = setTimeout(startTime, 500);
+       }
+
+       function checkTime(i) {
+         if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10 minutes
+         return i;
+       }
+
+       </script>
+
+         <title>Clock</title>
+     </head>
+     <body onload="startTime()">
+              <clock><div id="clock"></div></clock>
+        </div>
+     </body>
+ </html>
