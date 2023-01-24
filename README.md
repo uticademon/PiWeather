@@ -1,4 +1,6 @@
-# PiWeather
+# PiWeather:  using PiZeroW and Hyperpixel 4.0 rectangle
+PiOS Buster
+Hyperpixel legacy for 3B+
 
 # add ttf fonts to system
 mkdir .fonts in home directory
