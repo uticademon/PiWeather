@@ -12,4 +12,5 @@ fc-cache -v -f
 add .bash_profile file to home directory
 
 # display open tabs
+make loop.sh executable (chmod u+x)
 ./loop.sh &
