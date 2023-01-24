@@ -1,4 +1,4 @@
-# PiWeather:  using PiZeroW and Hyperpixel 4.0 rectangle
+# PiWeather Kiosk - using PiZeroW and Hyperpixel 4.0 rectangle
 PiOS Buster
 Hyperpixel legacy for 3B+
 
