@@ -4,7 +4,7 @@
 mkdir .fonts in home directory
 
 place contents of Fonts folder into .fonts
-load fonts into system using:
+load fonts into system using:\n
 fc-cache -v -f
 
 # auto start browser
